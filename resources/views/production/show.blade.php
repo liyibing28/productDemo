@@ -103,7 +103,9 @@
                                                 {{$production->zuankong_renyuan}}
                                             </td>
                                             <td>
-                                                <button class="btn btn-success pull-right" type="submit">修改订单</button>
+                                                <form action="/production/{{$production->id}}/edit" method="get">
+                                                <button class="btn btn-success pull-right" type="submit" >修改订单状态</button>
+                                                </form>
                                             </td>
 
                                         </tr>

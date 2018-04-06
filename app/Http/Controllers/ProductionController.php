@@ -62,19 +62,25 @@ class ProductionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $production = Production::find($id);
+        //$production = Production::find($id);
 
-        $productions = Production::where('is_finished','=', false)->get();
-        $user = Auth::user();
-        if($user['role'] == 1 || $user['role'] == 0)
-        {
-            return view('production.show',compact('productions'));
+        if (Auth::check()) {
+            $productions = Production::where('is_finished','=', false)->get();
+            $user = Auth::user();
+            if($user['role'] == 1 || $user['role'] == 0)
+            {
+                return view('production.show',compact('productions'));
+            }
+            else if($user['role'] == 2){
+                return view('production.out_show',compact('productions'));
+            }
         }
-        else if($user['role'] == 2){
-            return view('production.out_show',compact('productions'));
+        else{
+            return view('auth.login');
         }
+
 
     }
 

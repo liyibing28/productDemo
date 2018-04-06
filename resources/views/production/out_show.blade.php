@@ -20,9 +20,7 @@
                                     <th>型号</th>
                                     <th>粗车日期</th>
                                     <th>粗车人员</th>
-
                                     <th>热处理日期</th>
-
                                     <th>精车日期</th>
                                     <th>操作</th>
 
@@ -64,7 +62,9 @@
                                             {{$production->jingche}}
                                         </td>
                                         <td>
-                                            <button class="btn btn-success pull-right" type="submit">修改订单</button>
+                                            <form action="/production/{{$production->id}}/edit" method="get">
+                                                <button class="btn btn-success pull-right" type="submit" >修改订单状态</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
