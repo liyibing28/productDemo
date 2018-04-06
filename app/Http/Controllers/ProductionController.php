@@ -101,6 +101,9 @@ class ProductionController extends Controller
         else if($user['role'] == 2){
             return view('production.out_edit',compact('production'));
         }
+        else if($user['role'] == 0){
+            return view('production.admin_edit',compact('production'));
+        }
 
         return back();
     }
@@ -116,22 +119,27 @@ class ProductionController extends Controller
     {
         $production = Production::find($id);
         $user = Auth::user();
-        if($user['role'] == 1)
+
+        //dd($request);
+        if($user['role'] == 1 || $user['role'] == 0)
         {
             $production->update([
                 'kaidaoyi' => $request->get('kaidaoyi'),
-                'kaidaoyi_banci' => $request->get('kaidaoyi_banci'),
                 'kaidaoyi_renyuan' => $request->get('kaidaoyi_renyuan'),
+                'kaidaoyi_banci' => $request->get('kaidaoyi_banci'),
+
                 'kaiding' => $request->get('kaiding'),
-                'kaiding_banci' => $request->get('kaiding_bani'),
                 'kaiding_renyuan' => $request->get('kaiding_renyuan'),
+                'kaiding_banci' => $request->get('kaiding_banci'),
+
                 'zuankong' => $request->get('zuankong'),
-                'zuankong_bancci' => $request->get('zuankong_banci'),
                 'zuankong_renyuan' => $request->get('zuankong_renyuan'),
+                'zuankong_banci' => $request->get('zuankong_banci'),
+
 
             ]);
         }
-        else if($user['role'] == 2){
+        if($user['role'] == 2){
             $production->update([
                 'cuche' => $request->get('cuche'),
                 'cuche_type' => $request->get('cuche_renyuan'),
@@ -139,26 +147,17 @@ class ProductionController extends Controller
                 'jingche' => $request->get('jingche'),
             ]);
         }
-        else if($user['role'] == 0){
+        if($user['role'] == 0){
             $production->update([
                 'kebian' =>  $request->get('kebian'),
-                'xiadanshijian' => $request->get('orderTime'),
-                'jihuajiaoqi' => $request->get('planedTime'),
-                'guige' => $request->get('specification'),
-                'xinghao' => $request->get('model'),
+                'xiadanshijian' => $request->get('xiadanshijian'),
+                'jihuajiaoqi' => $request->get('jihuajiaoqi'),
+                'guige' => $request->get('guige'),
+                'xinghao' => $request->get('xinghao'),
                 'cuche' => $request->get('cuche'),
                 'cuche_type' => $request->get('cuche_renyuan'),
                 'rechuli' => $request->get('rechuli'),
                 'jingche' => $request->get('jingche'),
-                'kaidaoyi' => $request->get('kaidaoyi'),
-                'kaidaoyi_banci' => $request->get('kaidaoyi_banci'),
-                'kaidaoyi_renyuan' => $request->get('kaidaoyi_renyuan'),
-                'kaiding' => $request->get('kaiding'),
-                'kaiding_banci' => $request->get('kaiding_bani'),
-                'kaiding_renyuan' => $request->get('kaiding_renyuan'),
-                'zuankong' => $request->get('zuankong'),
-                'zuankong_bancci' => $request->get('zuankong_banci'),
-                'zuankong_renyuan' => $request->get('zuankong_renyuan'),
             ]);
         }
         return redirect()->route('production.show',[$production->id]);

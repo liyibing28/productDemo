@@ -26,16 +26,16 @@
                                         <th>精车日期</th>
 
                                         <th>开刀翼日期</th>
-                                        <th>开刀翼人员</th>
                                         <th>开刀翼班次</th>
+                                        <th>开刀翼人员</th>
 
                                         <th>开顶日期</th>
-                                        <th>开顶人员</th>
                                         <th>开顶班次</th>
+                                        <th>开顶人员</th>
 
                                         <th>钻孔日期</th>
-                                        <th>钻孔人员</th>
                                         <th>钻孔班次</th>
+                                        <th>钻孔人员</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -49,19 +49,19 @@
                                                 {{$production->id}}
                                             </td>
                                             <td >
-                                                {{$production->customer_number}}
+                                                {{$production->kebian}}
                                             </td>
                                             <td>
-                                                {{$production->order_time}}
+                                                {{$production->xiadanshijian}}
                                             </td>
                                             <td>
-                                                {{$production->planed_delibvery_time}}
+                                                {{$production->jihuajiaoqi}}
                                             </td>
                                             <td>
-                                                {{$production->specification}}
+                                                {{$production->guige}}
                                             </td>
                                             <td>
-                                                {{$production->model}}
+                                                {{$production->xinghao}}
                                             </td>
                                             <td>
                                                 {{$production->cuche}}

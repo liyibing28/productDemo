@@ -13,29 +13,29 @@
 
                                 {!! csrf_field() !!}
                                 {{ method_field('PATCH') }}
-                                <div class="form-group{{ $errors->has('kebian') ? ' has-error' : '' }}">
-                                    <label for="kebian">客编:</label>
+                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
+                                    <label for="jihuajiaoqi">客编:</label>
                                     {{ $production->customer_number }}
                                 </div>
 
-                                <div class="form-group{{ $errors->has('orderTime') ? ' has-error' : '' }}">
-                                    <label for="orderTime">下单时间:</label>
-                                    {{ $production->order_time }}
+                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
+                                    <label for="jihuajiaoqi">下单时间:</label>
+                                    {{ $production->xiadanshijian }}
                                 </div>
 
-                                <div class="form-group{{ $errors->has('planedTime') ? ' has-error' : '' }}">
-                                    <label for="planedTime">计划交期</label>
-                                    {{ $production->planed_delibvery_time }}
+                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
+                                    <label for="jihuajiaoqi">计划交期</label>
+                                    {{ $production->jihuajiaoqi }}
                                 </div>
 
-                                <div class="form-group{{ $errors->has('specification') ? ' has-error' : '' }}">
-                                    <label for="specification">规格</label>
-                                    {{ $production->specification }}
+                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
+                                    <label for="jihuajiaoqi">规格</label>
+                                    {{ $production->guige }}
                                 </div>
 
-                                <div class="form-group{{ $errors->has('model') ? ' has-error' : '' }}">
-                                    <label for="model">型号</label>
-                                    {{ $production->model }}
+                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
+                                    <label for="jihuajiaoqi">型号</label>
+                                    {{ $production->xinghao }}
                                 </div>
 
 
@@ -50,12 +50,12 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('cuche_renyuan') ? ' has-error' : '' }}">
-                                    <label for="cuche_renyuan">粗车人员</label>
-                                    <input type="text" value="{{ $production->cuche_type }}" name="cuche_renyuan" class="form-control" id="cuche_renyuan">
-                                    @if ($errors->has('cuche_renyuan'))
+                                <div class="form-group{{ $errors->has('cuche_type') ? ' has-error' : '' }}">
+                                    <label for="cuche_type">粗车人员</label>
+                                    <input type="text" value="{{ $production->cuche_type }}" name="cuche_type" class="form-control" id="cuche_type">
+                                    @if ($errors->has('cuche_type'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('cuche_renyuan') }}</strong>
+                                        <strong>{{ $errors->first('cuche_type') }}</strong>
                                     </span>
                                     @endif
                                 </div>
