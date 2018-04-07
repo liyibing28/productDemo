@@ -35,19 +35,19 @@
                                             {{$production->id}}
                                         </td>
                                         <td >
-                                            {{$production->customer_number}}
+                                            {{$production->kebian}}
                                         </td>
                                         <td>
-                                            {{$production->order_time}}
+                                            {{$production->xiadanshijian}}
                                         </td>
                                         <td>
-                                            {{$production->planed_delibvery_time}}
+                                            {{$production->jihuajiaoqi}}
                                         </td>
                                         <td>
-                                            {{$production->specification}}
+                                            {{$production->guige}}
                                         </td>
                                         <td>
-                                            {{$production->model}}
+                                            {{$production->xinghao}}
                                         </td>
                                         <td>
                                             {{$production->cuche}}

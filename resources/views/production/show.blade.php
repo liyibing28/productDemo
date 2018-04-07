@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
 @section('content')
     <div class="container">
         <div class="container">
