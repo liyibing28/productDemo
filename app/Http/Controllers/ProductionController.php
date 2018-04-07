@@ -16,7 +16,20 @@ class ProductionController extends Controller
      */
     public function index()
     {
-        return 'index';
+        if (Auth::check()) {
+            $productions = Production::where('is_finished','=', false)->get();
+            $user = Auth::user();
+            if($user['role'] == 1 || $user['role'] == 0)
+            {
+                return view('production.show',compact('productions'));
+            }
+            else if($user['role'] == 2){
+                return view('production.out_show',compact('productions'));
+            }
+        }
+        else{
+            return view('auth.login');
+        }
     }
 
     /**
@@ -138,7 +151,6 @@ class ProductionController extends Controller
 
                 'zuankong' =>         $request->get('zuankong'),
                 'zuankong_renyuan' => $request->get('zuankong_renyuan'),
-                'zuankong_banci' =>   $request->get('zuankong_banci'),
 */
                 'kaidaoyi' => $data['kaidaoyi'],
                 'kaidaoyi_renyuan' => $data['kaidaoyi_renyuan'],

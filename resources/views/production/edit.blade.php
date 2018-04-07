@@ -109,12 +109,12 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('zunakong_banci') ? ' has-error' : '' }}">
-                                    <label for="zunakong_banci">钻孔班次</label>
-                                    <input type="text" value="{{ $production->zuankong_banci }}" name="zuankong_banci" class="form-control" id="zunakong_banci">
-                                    @if ($errors->has('zunakong_banci'))
+                                <div class="form-group{{ $errors->has('zuankong_banci') ? ' has-error' : '' }}">
+                                    <label for="zuankong_banci">钻孔班次</label>
+                                    <input type="text" value="{{ $production->zuankong_banci }}" name="zuankong_banci" class="form-control" id="zuankong_banci">
+                                    @if ($errors->has('zuankong_banci'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('zunakong_banci') }}</strong>
+                                        <strong>{{ $errors->first('zuankong_banci') }}</strong>
                                     </span>
                                     @endif
                                 </div>

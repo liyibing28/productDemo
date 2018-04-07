@@ -117,7 +117,7 @@
 
 
                                 <div class="form-group{{ $errors->has('kaidaoyi_banci') ? ' has-error' : '' }}">
-                                    <label for="kaidaoyi_banci">开刀翼班次</label>
+                                    <label for="kaidaoyi_banci">开刀翼人员</label>
                                     <input type="text" value="{{ $production->kaidaoyi_banci }}" name="kaidaoyi_banci" class="form-control" id="kaidaoyi_banci">
                                     @if ($errors->has('kaidaoyi_banci'))
                                         <span class="help-block">
@@ -176,12 +176,12 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('zunakong_banci') ? ' has-error' : '' }}">
-                                    <label for="zunakong_banci">钻孔班次</label>
-                                    <input type="text" value="{{ $production->zunakong_banci }}" name="zuankong_banci" class="form-control" id="zunakong_banci">
-                                    @if ($errors->has('zunakong_banci'))
+                                <div class="form-group{{ $errors->has('zuankong_banci') ? ' has-error' : '' }}">
+                                    <label for="zuankong_banci">钻孔班次</label>
+                                    <input type="text" value="{{ $production->zuankong_banci }}" name="zuankong_banci" class="form-control" id="zuankong_banci">
+                                    @if ($errors->has('zuankong_banci'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('zunakong_banci') }}</strong>
+                                        <strong>{{ $errors->first('zuankong_banci') }}</strong>
                                     </span>
                                     @endif
                                 </div>
