@@ -117,7 +117,7 @@
 
 
                                 <div class="form-group{{ $errors->has('kaidaoyi_banci') ? ' has-error' : '' }}">
-                                    <label for="kaidaoyi_banci">开刀翼人员</label>
+                                    <label for="kaidaoyi_banci">开刀翼班次</label>
                                     <input type="text" value="{{ $production->kaidaoyi_banci }}" name="kaidaoyi_banci" class="form-control" id="kaidaoyi_banci">
                                     @if ($errors->has('kaidaoyi_banci'))
                                         <span class="help-block">
