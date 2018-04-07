@@ -1,27 +1,18 @@
 @extends('layouts.app')
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.css" />
-    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
-    <script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" ></script>
-<style>
-    .fixTable thead {
-        background-color: #fff;
-    }
-</style>
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
 @section('content')
     <div class="container">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <p>未完成订单</p>
+                        <div class="panel-heading">未完成订单</div>
 
-                        </div>
-
-                        <div id="goodsList" style="height: 100%; overflow-y: scroll; padding: 0;" class=" col-xs-12">
-                            <table id="textTable"  class="table table-bordered scrollTable">
+                        <div  class=" panel-body; ">
+                            <table id="scroll_bar" class="table table-bordered">
                                 <thead>
-                                <tr>
+                                <tr id="bar_head">
                                     <th>序号</th>
                                     <th>客编</th>
                                     <th>下单时间</th>
@@ -30,21 +21,27 @@
                                     <th>型号</th>
                                     <th>粗车日期</th>
                                     <th>粗车人员</th>
+
                                     <th>热处理日期</th>
+
                                     <th>精车日期</th>
+
                                     <th>开刀翼日期</th>
                                     <th>开刀翼班次</th>
                                     <th>开刀翼人员</th>
+
                                     <th>开顶日期</th>
                                     <th>开顶班次</th>
                                     <th>开顶人员</th>
+
                                     <th>钻孔日期</th>
                                     <th>钻孔班次</th>
                                     <th>钻孔人员</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
-                                <tbody id="testTbody">
+
+                                <tbody>
 
                                 <?php $num = 0; ?>
                                 @foreach($productions->all() as $production)
@@ -122,8 +119,9 @@
 
                                     </tr>
                                 @endforeach
-
                                 </tbody>
+
+                                <tbody id="testTbody"> </tbody>
                             </table>
                         </div>
                     </div>
@@ -136,43 +134,34 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(function(){
 
-            var html = '',
-                $ele = $('#testTbody');
-            for(var i = 0; i < 200; i++) {
-                html += "<tr><td>1</td><td>12345</td><td>1234</td><td>123</td><td>12</td></tr>";
-            }
-            $ele.empty().append(html);
+            var scroll_bar = $("#scroll_bar");//表格的id
+            var bar_head = $("#bar_head");//表头
+            var bar_height = bar_head.height();//表头高
+            var bat_width = bar_head.width();
+            var sroll_header= scroll_bar.clone().attr('id','bb');//更改复制的表格id
+            $(window).scroll(function(){
+                var scroll_top = $('body').scrollTop() - scroll_bar.offset().top;//判断是否到达窗口顶部
 
-            var $fixTable = $('#goodsList .fixTable');
-            $('#goodsList').scroll(function() {
-                var id = '#' + this.id;
-                var scrollTop = $(id).scrollTop() || $(id).get(0).scrollTop,
-                    style = {
-                        'position': 'absolute',
-                        'left': '0',
-                        'right': '0',
-                        'top': scrollTop + 'px'
-                    };
-                if ($fixTable.length) {
-                    (scrollTop === 0) ? $fixTable.addClass('hidden') : $fixTable.removeClass('hidden');
-                    $fixTable.css(style);
-                } else {
-                    var html = $(id + ' .scrollTable thead').get(0).innerHTML;
-                    var table = $('<table class="table table-bordered fixTable"><thead>' + html + '</thead></table>');
-                    table.css(style);
-                    $(id).append(table);
-                    $fixTable = $(this).find('.fixTable');
+                if (scroll_top > 0) {
+                    $('body').append('<div id="shelter"></div>');//复制的表格所在的容器
+                    $("#shelter").css({'height':bar_height,'position':'fixed','top':'0','overflow':'hidden','width':'980px','margin': '0 auto','left':'0','right':'0','border-bottom':'1px solid #c8c8c8'});
+                    sroll_header.appendTo('#shelter');
+                    $('#shelter table').removeClass(); //删除table原来有的默认class，防止margin,padding等值影响样式
+                    //$('#shelter table').css({'width':'980px','background-color':'#f0f0f0','margin':'0 auto'});
+                    $('#shelter table').css({'width':bat_width,'background-color':'#f0f0f0','margin':'0 auto'});
+                    $('#shelter table tr th').css('height', bar_height);//此处可以自行发挥
+                    $('#shelter table tr td').css({'padding':'20px','text-align':'center'});
+
+                    $('#shelter').show();
+
+                }else {
+                    $('#shelter').hide();
                 }
             });
-        })
+
+        });
     </script>
-
 @endsection
-
-
-
-
-
 
