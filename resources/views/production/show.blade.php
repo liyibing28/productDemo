@@ -107,6 +107,13 @@
                                                 <button class="btn btn-success pull-right" type="submit" >修改订单状态</button>
                                                 </form>
                                             </td>
+                                            @if(Auth::user()->role == 0)
+                                                <td>
+                                                    <form action="/production/{{$production->id}}/delete" method="get">
+                                                        <button class="btn btn-success pull-right" type="submit" >删除订单</button>
+                                                    </form>
+                                                </td>
+                                            @endif
 
                                         </tr>
                                     @endforeach

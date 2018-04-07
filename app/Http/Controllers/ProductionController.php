@@ -170,9 +170,19 @@ class ProductionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+
+        if($this->is_manager() == false)
+        {
+            return back();
+        }
+        $production = Production::find($id);
+
+        $production->delete();
+
+        $productions = Production::where('is_finished','=', false)->get();
+        return view('production.show',compact('productions'));
     }
 
     public function getOutShow(){
@@ -183,6 +193,17 @@ class ProductionController extends Controller
         }
 
         return back();
+    }
+
+    public function is_manager(){
+        $user = Auth::user();
+        if($user['role'] != 0)
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
 }

@@ -47,7 +47,7 @@
                         @else
                             @if(Auth::user()->role == 0)
                                 <li><a class="nav-link" href="/production/create">创建订单</a></li>
-                                <li><a class="nav-link" href="/production/create">人员管理</a></li>
+                                <li><a class="nav-link" href="/admin/manageEmployee">人员管理</a></li>
                             @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

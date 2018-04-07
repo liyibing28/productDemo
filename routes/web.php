@@ -20,7 +20,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/production','ProductionController',['names' => [
     'create' => 'production.create',
     'show' => 'production.show',
-
 ]]);
 
 Route::get('/out_show', 'ProductionController@getOutShow');
+
+Route::get('/admin/manageEmployee','AdminController@index');
+
+
+Route::get('/admin/{id}/edit','AdminController@employeeEdit');
+
+Route::get('/admin/{id}/delete','AdminController@employeeDelete');
+
+Route::get('/production/{id}/delete','ProductionController@delete');
+
+Route::PATCH('/admin/manageEmployee/{id}','AdminController@employeeUpdate');

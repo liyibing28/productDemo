@@ -13,13 +13,13 @@
 
                                 {!! csrf_field() !!}
                                 {{ method_field('PATCH') }}
-                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
+                                <div class="form-group{{ $errors->has('kebian') ? ' has-error' : '' }}">
                                     <label for="jihuajiaoqi">客编:</label>
-                                    {{ $production->customer_number }}
+                                    {{ $production->kebian }}
                                 </div>
 
-                                <div class="form-group{{ $errors->has('jihuajiaoqi') ? ' has-error' : '' }}">
-                                    <label for="jihuajiaoqi">下单时间:</label>
+                                <div class="form-group{{ $errors->has('xiadanshijian') ? ' has-error' : '' }}">
+                                    <label for="xiadanshijian">下单时间:</label>
                                     {{ $production->xiadanshijian }}
                                 </div>
 
@@ -62,7 +62,7 @@
 
                                 <div class="form-group{{ $errors->has('rechuli') ? ' has-error' : '' }}">
                                     <label for="rechuli">热处理</label>
-                                    <input type="text" value="{{ old('rechuli') }}" name="rechuli" class="form-control" id="rechuli">
+                                    <input type="text" value="{{ $production->rechuli }}" name="rechuli" class="form-control" id="rechuli">
                                     @if ($errors->has('rechuli'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('rechuli') }}</strong>
