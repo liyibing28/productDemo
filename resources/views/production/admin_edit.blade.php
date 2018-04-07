@@ -76,7 +76,7 @@
 
                                 <div class="form-group{{ $errors->has('cuche_renyuan') ? ' has-error' : '' }}">
                                     <label for="cuche_renyuan">粗车人员</label>
-                                    <input type="text" value="{{ $production->cuche_type }}" name="cuche_renyuan" class="form-control" id="cuche_renyuan">
+                                    <input type="text" value="{{ $production->cuche_type }}" name="cuche_type" class="form-control" id="cuche_renyuan">
                                     @if ($errors->has('cuche_renyuan'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('cuche_renyuan') }}</strong>

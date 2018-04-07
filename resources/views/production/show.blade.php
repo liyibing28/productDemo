@@ -44,7 +44,7 @@
                                 <?php $num = 0; ?>
                                 @foreach($productions->all() as $production)
                                     <?php $num++;?>
-                                    <tr>
+                                    <tr class="hight:50px;">
                                         <td>
                                             {{$production->id}}
                                         </td>

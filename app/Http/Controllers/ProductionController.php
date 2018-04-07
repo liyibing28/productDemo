@@ -140,18 +140,6 @@ class ProductionController extends Controller
         if($user['role'] == 1 || $user['role'] == 0)
         {
             $production->update([
-                /*
-                'kaidaoyi' => $request->get('kaidaoyi'),
-                'kaidaoyi_renyuan' => $request->get('kaidaoyi_renyuan'),
-                'kaidaoyi_banci' =>   $request->get('kaidaoyi_banci'),
-
-                'kaiding' =>          $request->get('kaiding'),
-                'kaiding_renyuan' =>  $request->get('kaiding_renyuan'),
-                'kaiding_banci' =>    $request->get('kaiding_banci'),
-
-                'zuankong' =>         $request->get('zuankong'),
-                'zuankong_renyuan' => $request->get('zuankong_renyuan'),
-*/
                 'kaidaoyi' => $data['kaidaoyi'],
                 'kaidaoyi_renyuan' => $data['kaidaoyi_renyuan'],
                 'kaidaoyi_banci' =>   $data['kaidaoyi_banci'],
@@ -167,10 +155,10 @@ class ProductionController extends Controller
 
             ]);
         }
-        if($user['role'] == 2){
+        if($user['role'] == 2 || $user['role'] == 0){
             $production->update([
                 'cuche' => $request->get('cuche'),
-                'cuche_type' => $request->get('cuche_renyuan'),
+                'cuche_type' => $request->get('cuche_type'),
                 'rechuli' => $request->get('rechuli'),
                 'jingche' => $request->get('jingche'),
             ]);
@@ -182,10 +170,6 @@ class ProductionController extends Controller
                 'jihuajiaoqi' => $request->get('jihuajiaoqi'),
                 'guige' => $request->get('guige'),
                 'xinghao' => $request->get('xinghao'),
-                'cuche' => $request->get('cuche'),
-                'cuche_type' => $request->get('cuche_renyuan'),
-                'rechuli' => $request->get('rechuli'),
-                'jingche' => $request->get('jingche'),
             ]);
         }
         return redirect()->route('production.show',[$production->id]);
