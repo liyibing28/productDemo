@@ -121,20 +121,36 @@ class ProductionController extends Controller
         $user = Auth::user();
 
         //dd($request);
+
+        $data = $request->all();
+        //dd($data);
         if($user['role'] == 1 || $user['role'] == 0)
         {
             $production->update([
+                /*
                 'kaidaoyi' => $request->get('kaidaoyi'),
                 'kaidaoyi_renyuan' => $request->get('kaidaoyi_renyuan'),
-                'kaidaoyi_banci' => $request->get('kaidaoyi_banci'),
+                'kaidaoyi_banci' =>   $request->get('kaidaoyi_banci'),
 
-                'kaiding' => $request->get('kaiding'),
-                'kaiding_renyuan' => $request->get('kaiding_renyuan'),
-                'kaiding_banci' => $request->get('kaiding_banci'),
+                'kaiding' =>          $request->get('kaiding'),
+                'kaiding_renyuan' =>  $request->get('kaiding_renyuan'),
+                'kaiding_banci' =>    $request->get('kaiding_banci'),
 
-                'zuankong' => $request->get('zuankong'),
+                'zuankong' =>         $request->get('zuankong'),
                 'zuankong_renyuan' => $request->get('zuankong_renyuan'),
-                'zuankong_banci' => $request->get('zuankong_banci'),
+                'zuankong_banci' =>   $request->get('zuankong_banci'),
+*/
+                'kaidaoyi' => $data['kaidaoyi'],
+                'kaidaoyi_renyuan' => $data['kaidaoyi_renyuan'],
+                'kaidaoyi_banci' =>   $data['kaidaoyi_banci'],
+
+                'kaiding' =>      $data['kaiding'],
+                'kaiding_renyuan' =>  $data['kaiding_renyuan'],
+                'kaiding_banci' => $data['kaiding_banci'],
+
+                'zuankong' =>     $data['zuankong'],
+                'zuankong_renyuan' => $data['zuankong_renyuan'],
+                'zuankong_banci' => $data['zuankong_banci'],
 
 
             ]);
