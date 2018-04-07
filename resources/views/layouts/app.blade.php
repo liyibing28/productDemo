@@ -43,7 +43,6 @@
                         @guest
 
                             <li><a class="nav-link" href="{{ route('login') }}">登录</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">注册</a></li>
                         @else
                             @if(Auth::user()->role == 0)
                                 <li><a class="nav-link" href="/production/create">创建订单</a></li>

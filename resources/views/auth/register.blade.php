@@ -63,16 +63,17 @@
 
                         <div class="form-group row">
                             <label for="renyuan-type" class="col-md-4 col-form-label text-md-right">人员类型:</label>
-                                <select class="form-control col-md-6 " id="sel1" name="is_taihao">
-                                    <option>公司员工</option>
-                                    <option>外包</option>
-                                </select>
+                            <select class="form-control col-md-6" id="sel1 " name="is_taihao">
+                                <option value="0">管理员</option>
+                                <option value="1">公司员工</option>
+                                <option value="2">外包</option>
+                            </select>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    增加员工
                                 </button>
                             </div>
                         </div>

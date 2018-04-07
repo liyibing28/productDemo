@@ -17,6 +17,11 @@
                                     <th>手机</th>
                                     <th>员工类型</th>
                                     <th>操作</th>
+                                    <td>
+                                        <form action="/admin/addEmployee" method="get">
+                                            <button class="btn btn-success pull-right" type="submit" >注册新人员</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 </thead>
                                 <tbody>

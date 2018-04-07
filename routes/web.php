@@ -34,3 +34,7 @@ Route::get('/admin/{id}/delete','AdminController@employeeDelete');
 Route::get('/production/{id}/delete','ProductionController@delete');
 
 Route::PATCH('/admin/manageEmployee/{id}','AdminController@employeeUpdate');
+
+Route::get('/admin/addEmployee','AdminController@getAddEmployeeForm');
+
+Route::post('/admin/addEmployee','AdminController@employeeAdd');
