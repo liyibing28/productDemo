@@ -180,9 +180,10 @@ class ProductionController extends Controller
         $production = Production::find($id);
 
         $production->delete();
-
+        //
         $productions = Production::where('is_finished','=', false)->get();
         return view('production.show',compact('productions'));
+
     }
 
     public function getOutShow(){
