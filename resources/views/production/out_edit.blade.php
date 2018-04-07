@@ -41,7 +41,7 @@
 
 
                                 <div class="form-group{{ $errors->has('cuche') ? ' has-error' : '' }}">
-                                    <label for="cuche">粗车</label>
+                                    <label for="cuche">粗车时间</label>
                                     <input type="text" value="{{ $production->cuche }}" name="cuche" class="form-control" id="cuche">
                                     @if ($errors->has('cuche'))
                                         <span class="help-block">
@@ -61,7 +61,7 @@
                                 </div>
 
                                 <div class="form-group{{ $errors->has('rechuli') ? ' has-error' : '' }}">
-                                    <label for="rechuli">热处理</label>
+                                    <label for="rechuli">热处理时间</label>
                                     <input type="text" value="{{ $production->rechuli }}" name="rechuli" class="form-control" id="rechuli">
                                     @if ($errors->has('rechuli'))
                                         <span class="help-block">
@@ -70,7 +70,7 @@
                                     @endif
                                 </div>
                                 <div class="form-group{{ $errors->has('jingche') ? ' has-error' : '' }}">
-                                    <label for="jingche">精车</label>
+                                    <label for="jingche">精车时间</label>
                                     <input type="text" value="{{ $production->jingche }}" name="jingche" class="form-control" id="jingche">
                                     @if ($errors->has('jingche'))
                                         <span class="help-block">
