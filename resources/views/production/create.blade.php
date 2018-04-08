@@ -13,7 +13,7 @@
                                 {!! csrf_field() !!}
                                 <div class="form-group{{ $errors->has('kebian') ? ' has-error' : '' }}">
                                     <label for="kebian">客编</label>
-                                    <input type="text" value="{{ old('kebian') }}" name="kebian" class="form-control"  id="kebian">
+                                    <input type="text" value="{{ old('kebian') }}" name="kebian" class="form-control"  id="kebian" required="required">
                                     @if ($errors->has('kebian'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('kebian') }}</strong>
@@ -23,7 +23,7 @@
 
                                 <div class="form-group{{ $errors->has('orderTime') ? ' has-error' : '' }}">
                                     <label for="orderTime">下单时间</label>
-                                    <input type="text" value="{{ old('orderTime') }}" name="orderTime" class="form-control"  id="orderTime">
+                                    <input type="text" value="{{ old('orderTime') }}" name="orderTime" class="form-control"  id="orderTime" required="required">
                                     <!--<input type="text" id="datepicker"> -->
 
                                     @if ($errors->has('orderTime'))
@@ -35,7 +35,7 @@
 
                                 <div class="form-group{{ $errors->has('planedTime') ? ' has-error' : '' }}">
                                     <label for="planedTime">计划交期</label>
-                                    <input type="text" value="{{ old('planedTime') }}" name="planedTime" class="form-control" id="planedTime">
+                                    <input type="text" value="{{ old('planedTime') }}" name="planedTime" class="form-control" id="planedTime" required="required">
                                     @if ($errors->has('planedTime'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('planedTime') }}</strong>
@@ -45,7 +45,7 @@
 
                                 <div class="form-group{{ $errors->has('specification') ? ' has-error' : '' }}">
                                     <label for="specification">规格</label>
-                                    <input type="text" value="{{ old('specification') }}" name="specification" class="form-control" id="specification">
+                                    <input type="text" value="{{ old('specification') }}" name="specification" class="form-control" id="specification" required="required">
                                     @if ($errors->has('specification'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('specification') }}</strong>
@@ -55,7 +55,7 @@
 
                                 <div class="form-group{{ $errors->has('model') ? ' has-error' : '' }}">
                                     <label for="model">型号</label>
-                                    <input type="text" value="{{ old('model') }}" name="model" class="form-control" id="model">
+                                    <input type="text" value="{{ old('model') }}" name="model" class="form-control" id="model" required="required">
                                     @if ($errors->has('model'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('model') }}</strong>

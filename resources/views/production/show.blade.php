@@ -18,9 +18,9 @@
                                     <th>规格</th>
                                     <th>型号</th>
                                     <th>粗车日期</th>
-                                    <th>粗车人员</th>
 
                                     <th>热处理日期</th>
+                                    <th>热处理厂</th>
 
                                     <th>精车日期</th>
 
@@ -66,12 +66,15 @@
                                         <td>
                                             {{$production->cuche}}
                                         </td>
-                                        <td>
-                                            {{$production->cuche_type}}
-                                        </td>
+
                                         <td>
                                             {{$production->rechuli}}
                                         </td>
+
+                                        <td>
+                                            {{$production->cuche_type}}
+                                        </td>
+
                                         <td>
                                             {{$production->jingche}}
                                         </td>

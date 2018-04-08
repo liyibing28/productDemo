@@ -50,14 +50,14 @@
                                     @endif
                                 </div>
 
-                                <div class="form-group{{ $errors->has('cuche_type') ? ' has-error' : '' }}">
-                                    <label for="cuche_type">粗车人员</label>
-                                    <input type="text" value="{{ $production->cuche_type }}" name="cuche_type" class="form-control" id="cuche_type">
-                                    @if ($errors->has('cuche_type'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('cuche_type') }}</strong>
-                                    </span>
-                                    @endif
+
+                                <div class="form-group">
+                                    <label for="cuche-type">热处理厂</label>
+                                    <select class="form-control" id="cuche_type" name="cuche_type">
+                                        <option value="0">未进行</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group{{ $errors->has('rechuli') ? ' has-error' : '' }}">
